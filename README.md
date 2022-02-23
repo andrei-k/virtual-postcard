@@ -1,6 +1,3 @@
-# virtual-postcard
+# Virtual Postcard
 
-Todo:
-- Update readme
-- Fix form style
-- Create back of postcards
+Virtual Postcard provies a simple flow of selecting and filling out a virtual postcard written in Vue.js.
