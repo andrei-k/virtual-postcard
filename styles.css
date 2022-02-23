@@ -6,7 +6,7 @@ body {
   background: #f0f0f0;
 }
 
-#boot .container {
+.container {
   width: 100%;
   padding: 40px 0;
 }
@@ -15,25 +15,25 @@ body {
     background: #fff;
   }
 
-  #boot .container {
+  .container {
     padding: 0;
     margin: 0 !important;
   }
 }
 
-#boot #app {
+#app {
   width: 100%;
   margin: 0 auto;
   padding: 0 0 40px 0;
   font: 18px/26px 'Open Sans', sans-serif;
 }
 @media (max-width: 720px) {
-  #boot #app {
+  #app {
     padding: 0;
   }
 }
 
-#boot .app-container {
+.app-container {
   position: relative;
   width: 100%;
   max-width: 720px;
@@ -42,7 +42,7 @@ body {
   background-color: #fff;
 }
 @media (max-width: 480px) {
-  #boot .app-container {
+  .app-container {
     padding: 15px;
   }
 }
@@ -56,36 +56,36 @@ body {
   background: #fff;
 }
 
-#boot .logo {
+.logo {
   display: block;
   width: 240px;
   margin: 20px auto 60px auto;
 }
 @media (max-width: 480px) {
-  #boot .logo {
+  .logo {
     width: 180px;
     margin: 0 auto 40px auto;
   }
 }
 
-#boot h1 {
+h1 {
   margin: 10px 0 40px 0;
   text-align: center;
   font: bold 56px/66px 'Open Sans', sans-serif !important;
   letter-spacing: 1px;
   color: #333;
 }
-#boot h1 span {
+h1 span {
   color: #d6001c;
 }
 @media (max-width: 480px) {
-  #boot h1 {
+  h1 {
     margin: 10px 0 20px 0;
     font: bold 32px/42px 'Open Sans', sans-serif !important;
   }
 }
 
-#boot h2 {
+h2 {
   margin: 10px 0 40px;
   text-align: center;
   font: 36px/46px 'Open Sans', sans-serif !important;
@@ -93,19 +93,19 @@ body {
   color: #333;
 }
 @media (max-width: 480px) {
-  #boot h2 {
+  h2 {
     margin: 0 0 20px 0;
     font: 26px/36px 'Open Sans', sans-serif !important;
   }
 }
 
-#boot p {
+p {
   margin: 16px 0 30px 0;
   font: 20px/32px 'Open Sans', sans-serif;
   color: #333;
 }
 
-#boot .btn {
+.btn {
   display: block;
   margin: 50px  auto 30px auto;
   padding: 14px 20px;
@@ -119,25 +119,25 @@ body {
   text-shadow: none;
 }
 
-#boot .btn:hover, #boot .btn:focus, #boot .btn:active {
+.btn:hover, .btn:focus, .btn:active {
   background-color: #1a6fa9;
   border-color: #1a6fa9;
   color: #fff;
 }
 
-#boot .btn.mail {
+.btn.mail {
   margin: 20px auto;
   background: #47cf73;
   border-color: #47cf73;
   color: #000;
 }
-#boot .btn.mail:hover, #boot .btn.mail:focus, #boot .btn.mail:active {
+.btn.mail:hover, .btn.mail:focus, .btn.mail:active {
   background: #3ebd66;
   border-color: #3ebd66;
   color: #000;
 }
 
-#boot .btn.lang-toggle {
+.btn.lang-toggle {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -149,24 +149,24 @@ body {
   font: 15px/20px 'Open Sans', sans-serif;
   letter-spacing: .5px;
 }
-#boot .btn.lang-toggle:hover {
+.btn.lang-toggle:hover {
   background: #f4f4f4;
 }
 
-#boot .postcards {
+.postcards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#boot .postcards img {
+.postcards img {
   width: 300px;
   margin-bottom: 3%;
   padding: 20px 40px;
   cursor: pointer;
 }
 
-#boot .postcards img:hover {
+.postcards img:hover {
   border: 1px solid #333;
 }
 
@@ -178,21 +178,21 @@ body {
 }
 
 
-#boot label, #boot input[type=text], #boot textarea {
+label, input[type=text], textarea {
   font: 18px/18px 'Open Sans', sans-serif;
 }
 
-#boot label {
+label {
   margin-top: 7px;
 }
 
-#boot input[type=text] {
+input[type=text] {
   width: 100%;
   padding: 10px 16px;
   margin: 0;
 }
 
-#boot textarea {
+textarea {
   width: 100%;
   height: 300px;
   padding: 12px 16px;
@@ -200,63 +200,62 @@ body {
   line-height: 28px;
 }
 
-#boot .form-offset {
+.form-offset {
   margin-left: 180px;
 }
 
-#boot .form-offset p {
+.form-offset p {
   font: 18px/18px 'Open Sans', sans-serif;
   line-height: 28px;
 }
 
-#boot p.field-info {
+p.field-info {
   font: 16px/22px 'Open Sans', sans-serif;
   margin: 10px 0 5px 10px;
   color: #727171;
 }
 
 @media (max-width: 600px) {
-    #boot .form-horizontal .control-group {
+    .form-horizontal .control-group {
         margin-bottom: 10px;
     }
-    #boot .form-horizontal .control-label {
+    .form-horizontal .control-label {
         float: none;
         width: 100%;
         margin-bottom: 10px;
         text-align: left;
     }
-    #boot .form-horizontal .controls {
+    .form-horizontal .controls {
         margin-left: 0;
     }
-    #boot .form-offset {
+    .form-offset {
         margin-left: 0;
     }
 }
 
-#boot img.selected {
+img.selected {
   display: block;
   width: 300px;
   margin: 0 auto 60px auto;
 }
 
-#boot .preview {
+.preview {
     position: relative;
     width: 960px;
     height: 640px;
     background-image: url(assets/postcard-1-back.png);
-    /* background-image: url(/content/dam/mobile-app/virtual-postcard/postcard-1-back.png) no-repeat; */
     background-size: 960px;
     background-repeat: no-repeat;
     margin: 0 auto;
 }
 
-#boot .message-container {
+.message-container {
     width: 487px;
     height: 640px;
     padding: 30px 0 0 30px;
 }
 
-#boot .message-container .message {
+.message-container .message {
     overflow: auto;
     overflow-y: scroll;
     width: 100%;
@@ -265,22 +264,22 @@ body {
     font: 600 24px/36px 'Architects Daughter', cursive;
 }
 
-#boot .message-container .message::-webkit-scrollbar {
+.message-container .message::-webkit-scrollbar {
     -webkit-appearance: none;
 }
-#boot .message-container .message::-webkit-scrollbar:vertical {
+.message-container .message::-webkit-scrollbar:vertical {
     width: 11px;
 }
-#boot .message-container .message::-webkit-scrollbar:horizontal {
+.message-container .message::-webkit-scrollbar:horizontal {
     height: 11px;
 }
-#boot .message-container .message::-webkit-scrollbar-thumb {
+.message-container .message::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 2px solid #efeeea;
     background-color: rgba(0, 0, 0, .5);
 }
 
-#boot .to-container {
+.to-container {
   position: absolute;
   top: 254px;
   left: 564px;
@@ -288,14 +287,14 @@ body {
   height: 100px;
 }
 
-#boot .to-container .to-label, #boot .to-container .to-name  {
+.to-container .to-label, .to-container .to-name  {
   font: 600 24px/36px 'Architects Daughter', cursive;
 }
-#boot .to-container .to-name  {
+.to-container .to-name  {
   margin-top: 31px;
 }
 
-#boot .from-container {
+.from-container {
   position: absolute;
   top: 388px;
   left: 564px;
@@ -303,10 +302,10 @@ body {
   height: 100px;
 }
 
-#boot .from-container .from-label, #boot .from-container .from-name  {
+.from-container .from-label, .from-container .from-name  {
   font: 600 24px/36px 'Architects Daughter', cursive;
 }
-#boot .from-container .from-name  {
+.from-container .from-name  {
   margin-top: 31px;
 }
 

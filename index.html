@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,138 +18,132 @@
 </head>
 
 <body>
-<div id="boot">
-<div class="container">
+    <div class="container">
 
-    <div id="app" v-cloak>
-        <!-- INTRO -->
-        <transition name="fade" mode="out-in" appear>
-            <div v-if="steps[1]" class="app-container">
-                <img class="logo" src="assets/logo.png" alt="Logo">
-                <h1>Virtual Postcard<br><span>Template</h1>
-            	<h2>Virtual Postcard Template</h2>
+        <div id="app" v-cloak>
+            <!-- INTRO -->
+            <transition name="fade" mode="out-in" appear>
+                <div v-if="steps[1]" class="app-container">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <h1>Virtual Postcard<br><span>Template</h1>
+                    <h2>Virtual Postcard Template</h2>
 
-                <p>Dark and stormy smoky maple tempeh glaze shallots Thai pumpkin spring cilantro one bowl earl grey latte red curry tofu noodles. Dessert Bolivian rainbow pepper chili mocha chocolate hazelnut shiitake Thai super chili candy cane winter Chinese five-spice powder a delicious meal bite sized.</p>
-                
-                <button @click="nextStep(2)" class="btn">Create Postcard</button>
-            </div>
-        </transition>
-
-
-        <!-- SELECT POSTCARD -->
-        <transition name="fade" mode="out-in" appear>
-            <div v-if="steps[2]" class="app-container">
-                <img class="logo" src="assets/logo.png" alt="Logo">
-                <h2 class="text-center">Select a Postcard</h2>
-
-                <div class="postcards">
-                    <img @click="selectPostcard(1)" src="assets/postcard-1-front.png" class="img-polaroid">
-                    <img @click="selectPostcard(2)" src="assets/postcard-2-front.png" class="img-polaroid">
-                    <img @click="selectPostcard(3)" src="assets/postcard-3-front.png" class="img-polaroid">
-                    <img @click="selectPostcard(4)" src="assets/postcard-4-front.png" class="img-polaroid">
+                    <p>Dark and stormy smoky maple tempeh glaze shallots Thai pumpkin spring cilantro one bowl earl grey latte red curry tofu noodles. Dessert Bolivian rainbow pepper chili mocha chocolate hazelnut shiitake Thai super chili candy cane winter Chinese five-spice powder a delicious meal bite sized.</p>
+                    
+                    <button @click="nextStep(2)" class="btn">Create Postcard</button>
                 </div>
-                <br><br>
-            </div>
-        </transition>
+            </transition>
 
+            <!-- SELECT POSTCARD -->
+            <transition name="fade" mode="out-in" appear>
+                <div v-if="steps[2]" class="app-container">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <h2 class="text-center">Select a Postcard</h2>
 
-        <!-- MESSAGE FORM -->
-        <transition name="fade" mode="out-in" appear>
-            <div v-if="steps[3]" class="app-container">
-                <img class="logo" src="assets/logo.png" alt="Logo">
-                <h2 class="text-center">Write a Message</h2>
+                    <div class="postcards">
+                        <img @click="selectPostcard(1)" src="assets/postcard-1-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(2)" src="assets/postcard-2-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(3)" src="assets/postcard-3-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(4)" src="assets/postcard-4-front.png" class="img-polaroid">
+                    </div>
+                    <br><br>
+                </div>
+            </transition>
 
-                <img :src="userPostcardSrc" class="selected" alt="Postcard">
+            <!-- MESSAGE FORM -->
+            <transition name="fade" mode="out-in" appear>
+                <div v-if="steps[3]" class="app-container">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <h2 class="text-center">Write a Message</h2>
 
-                <form class="form-horizontal">
-                    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Email (optional)</label>
-                        <div class="controls">
-                            <input type="text" id="inputEmail" ref="inputEmail" placeholder="Email" :value="userEmail">
+                    <img :src="userPostcardSrc" class="selected" alt="Postcard">
+
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="inputEmail">Email (optional)</label>
+                            <div class="controls">
+                                <input type="text" id="inputEmail" ref="inputEmail" placeholder="Email" :value="userEmail">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="inputName">Name (optional)</label>
+                            <div class="controls">
+                                <input type="text" id="inputName" ref="inputName" placeholder="Name" :value="userName">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="inputMessage">Message (required)</label>
+                            <div class="controls">
+                                <textarea id="inputMessage" name="inputMessage" ref="inputMessage" @keyup="checkChars()" maxlength="360">{{ inputMessage }}</textarea>
+                                <p class="field-info">Remaining characters: {{ remainingChars }}</p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <button @click="previewPostcard()" class="btn form-offset" style="margin-bottom: 20px;">Preview Your Postcard</button>
+
+                    <div class="form-offset">
+                        <a href="javascript:;" @click="changePostcard()" class="">Select Different Postcard</a>
+                    </div>
+                </div>
+            </transition>
+
+            <!-- PREVIEW -->
+            <transition name="fade" mode="out-in" appear>
+                <div v-if="steps[4]" class="app-container-wide">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <h2 class="text-center">Preview Your Postcard</h2>
+
+                    <div class="preview" :style="userPostcardStyleObject">
+                        <div class="message-container">
+                            <div class="message" v-html="finalMessage"></div>
+                        </div>
+                        <div class="to-container">
+                            <div class="to-label">To: Address</div>
+                            <div class="to-name">City</div>
+                        </div>
+                        <div class="from-container" v-if="userName">
+                            <div class="from-label">From:</div>
+                            <div class="from-name" v-html="userName"></div>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label" for="inputName">Name (optional)</label>
-                        <div class="controls">
-                            <input type="text" id="inputName" ref="inputName" placeholder="Name" :value="userName">
-                        </div>
-                    </div>
+                    <button @click="mailPostcard()" class="btn mail">Mail It!</button>
 
-                    <div class="control-group">
-                        <label class="control-label" for="inputMessage">Message (required)</label>
-                        <div class="controls">
-                            <textarea id="inputMessage" name="inputMessage" ref="inputMessage" @keyup="checkChars()" maxlength="360">{{ inputMessage }}</textarea>
-                            <p class="field-info">Remaining characters: {{ remainingChars }}</p>
-                        </div>
-                    </div>
-                </form>
-
-                <button @click="previewPostcard()" class="btn form-offset" style="margin-bottom: 20px;">Preview Your Postcard</button>
-
-                <div class="form-offset">
-                    <a href="javascript:;" @click="changePostcard()" class="">Select Different Postcard</a>
-                </div>
-            </div>
-        </transition>
-
-
-        <!-- PREVIEW -->
-        <transition name="fade" mode="out-in" appear>
-            <div v-if="steps[4]" class="app-container-wide">
-                <img class="logo" src="assets/logo.png" alt="Logo">
-                <h2 class="text-center">Preview Your Postcard</h2>
-
-                <div class="preview" :style="userPostcardStyleObject">
-                    <div class="message-container">
-                        <div class="message" v-html="finalMessage"></div>
-                    </div>
-                    <div class="to-container">
-                        <div class="to-label">To: Address</div>
-                        <div class="to-name">City</div>
-                    </div>
-                    <div class="from-container" v-if="userName">
-                        <div class="from-label">From:</div>
-                        <div class="from-name" v-html="userName"></div>
+                    <div class="text-center">
+                        <a href="javascript:;" @click="nextStep(3)" class="">Update Your Message</a>
                     </div>
                 </div>
+            </transition>
 
-                <button @click="mailPostcard()" class="btn mail">Mail It!</button>
+            <!-- THANK YOU -->
+            <transition name="fade" mode="out-in" appear>
+                <div v-if="steps[5]" class="app-container">
+                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <h2 class="text-center">Thank You!</h2>
 
-                <div class="text-center">
-                    <a href="javascript:;" @click="nextStep(3)" class="">Update Your Message</a>
-                </div>
-            </div>
-        </transition>
-
-
-        <!-- THANK YOU -->
-        <transition name="fade" mode="out-in" appear>
-            <div v-if="steps[5]" class="app-container">
-                <img class="logo" src="assets/logo.png" alt="Logo">
-                <h2 class="text-center">Thank You!</h2>
-
-                <div class="container-animation">
-                    <div class="animation">
-                        <div class='i-mail'>
-                        <div class='mail-anim'></div>
+                    <div class="container-animation">
+                        <div class="animation">
+                            <div class='i-mail'>
+                            <div class='mail-anim'></div>
+                            </div>
+                            <div class='line'></div>
+                            <div class='i-success'>
+                            <div class='success-anim'></div>
+                            </div>
                         </div>
-                        <div class='line'></div>
-                        <div class='i-success'>
-                        <div class='success-anim'></div>
+                        <div class="animation-message">
+                            Your postcard has been mailed
                         </div>
                     </div>
-                    <div class="animation-message">
-                        Your postcard has been mailed
-                    </div>
+                    <br><br>
                 </div>
-                <br><br>
-            </div>
-        </transition>
+            </transition>
+        </div>
     </div>
 
     <script src="app.js"></script>
-</div>
-</div>
 </body>
 </html>
