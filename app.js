@@ -35,7 +35,7 @@ const app = Vue.createApp({
             }, 320);
         },
         selectPostcard(postcard) {
-            this.userPostcardSrc = 'assets/postcard-' + postcard + '-front.png';
+            this.userPostcardSrc = 'assets/postcard-' + postcard + '-back.png';
             this.userPostcardStyleObject.backgroundImage = 'url(' + this.userPostcardSrc + ')';
             this.nextStep(3);
         },
