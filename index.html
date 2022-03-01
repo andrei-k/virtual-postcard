@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/vue@3"></script>
     <!-- https://unpkg.com/vue@3/dist/vue.global.prod.js -->
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" integrity="sha512-dhpxh4AzF050JM736FF+lLVybu28koEYRrSJtTKfA4Z7jKXJNQ5LcxKmHEwruFN2DuOAi9xeKROJ4Z+sttMjqw==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
@@ -58,31 +58,25 @@
 
                     <img :src="userPostcardSrc" class="selected" alt="Postcard">
 
-                    <form class="form-horizontal">
-                        <div class="control-group">
-                            <label class="control-label" for="inputEmail">Email (optional)</label>
-                            <div class="controls">
-                                <input type="text" id="inputEmail" ref="inputEmail" placeholder="Email" :value="userEmail">
-                            </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email (optional)</label>
+                            <input type="email" id="inputEmail" class="form-control" ref="inputEmail" :value="userEmail">
                         </div>
 
-                        <div class="control-group">
-                            <label class="control-label" for="inputName">Name (optional)</label>
-                            <div class="controls">
-                                <input type="text" id="inputName" ref="inputName" placeholder="Name" :value="userName">
-                            </div>
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Name (optional)</label>
+                            <input type="text" id="inputName" class="form-control" ref="inputName" :value="userName">
                         </div>
 
-                        <div class="control-group">
-                            <label class="control-label" for="inputMessage">Message (required)</label>
-                            <div class="controls">
-                                <textarea id="inputMessage" name="inputMessage" ref="inputMessage" @keyup="checkChars()" maxlength="360">{{ inputMessage }}</textarea>
-                                <p class="field-info">Remaining characters: {{ remainingChars }}</p>
-                            </div>
+                        <div class="mb-3">
+                            <label for="inputMessage" class="form-label">Message (required)</label>
+                            <textarea id="inputMessage" class="form-control" name="inputMessage" ref="inputMessage" @keyup="checkChars()" maxlength="300">{{ inputMessage }}</textarea>
+                            <p class="field-info">Remaining characters: {{ remainingChars }}</p>
                         </div>
                     </form>
 
-                    <button @click="previewPostcard()" class="btn form-offset" style="margin-bottom: 20px;">Preview Your Postcard</button>
+                    <button @click="previewPostcard()" class="btn form-offset mb-4">Preview Your Postcard</button>
 
                     <div class="form-offset">
                         <a href="javascript:;" @click="changePostcard()" class="">Select Different Postcard</a>
