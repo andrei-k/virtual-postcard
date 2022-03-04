@@ -18,12 +18,12 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container pt-5 pb-5">
 
         <div id="app" v-cloak>
             <!-- INTRO -->
             <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[1]" class="app-container">
+                <div v-if="steps[1]" class="app-container mx-auto p-sm-4 p-md-5">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                     <h1>Virtual Postcard<br><span>Template</h1>
                     <h2>Virtual Postcard Template</h2>
@@ -36,7 +36,7 @@
 
             <!-- SELECT POSTCARD -->
             <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[2]" class="app-container">
+                <div v-if="steps[2]" class="app-container mx-auto p-sm-4 p-md-5">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                     <h2 class="text-center">Select a Postcard</h2>
 
@@ -52,7 +52,7 @@
 
             <!-- MESSAGE FORM -->
             <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[3]" class="app-container">
+                <div v-if="steps[3]" class="app-container mx-auto p-sm-4 p-md-5">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                     <h2 class="text-center">Write a Message</h2>
 
@@ -86,7 +86,7 @@
 
             <!-- PREVIEW -->
             <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[4]" class="app-container-wide">
+                <div v-if="steps[4]" class="app-container-wide mx-auto p-sm-4 p-md-5">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                     <h2 class="text-center">Preview Your Postcard</h2>
 
@@ -110,7 +110,7 @@
 
             <!-- THANK YOU -->
             <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[5]" class="app-container">
+                <div v-if="steps[5]" class="app-container mx-auto p-sm-4 p-md-5">
                     <img class="logo" src="assets/logo.png" alt="Logo">
                     <h2 class="text-center">Thank You!</h2>
 
