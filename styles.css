@@ -55,7 +55,6 @@ body {
 
 h1 {
   margin: 10px 0 40px 0;
-  text-align: center;
   font: bold 56px/66px 'Open Sans', sans-serif !important;
   letter-spacing: 1px;
   color: #333;
@@ -72,7 +71,6 @@ h1 span {
 
 h2 {
   margin: 10px 0 40px;
-  text-align: center;
   font: 36px/46px 'Open Sans', sans-serif !important;
   letter-spacing: 1px;
   color: #333;
@@ -91,51 +89,8 @@ p {
 }
 
 .btn {
-  display: block;
-  margin: 40px  auto 30px auto;
-  padding: 14px 20px;
   font: 20px/32px 'Open Sans', sans-serif;
-  background-color: #1d7cbc;
-  border-color: #1d7cbc;
-  color: #fff;
   border-radius: 0;
-  background-image: none;
-  box-shadow: none;
-  text-shadow: none;
-}
-
-.btn:hover, .btn:focus, .btn:active {
-  background-color: #1a6fa9;
-  border-color: #1a6fa9;
-  color: #fff;
-}
-
-.btn.mail {
-  margin: 20px auto;
-  background: #47cf73;
-  border-color: #47cf73;
-  color: #000;
-}
-.btn.mail:hover, .btn.mail:focus, .btn.mail:active {
-  background: #3ebd66;
-  border-color: #3ebd66;
-  color: #000;
-}
-
-.btn.lang-toggle {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  margin: 0;
-  padding: 5px 10px 4px 10px;
-  border: 1px solid #000;
-  background: #fff;
-  color: #000;
-  font: 15px/20px 'Open Sans', sans-serif;
-  letter-spacing: .5px;
-}
-.btn.lang-toggle:hover {
-  background: #f4f4f4;
 }
 
 .postcards {
@@ -148,6 +103,7 @@ p {
   width: 300px;
   margin-bottom: 3%;
   padding: 20px 40px;
+  border: 1px solid #fff;
   cursor: pointer;
 }
 

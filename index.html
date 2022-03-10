@@ -25,12 +25,14 @@
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[1]" class="app-container mx-auto p-sm-4 p-md-5">
                     <img class="logo" src="assets/logo.png" alt="Logo">
-                    <h1>Virtual Postcard<br><span>Template</h1>
-                    <h2>Virtual Postcard Template</h2>
+                    <h1 class="text-center">Virtual Postcard<br><span>Template</h1>
+                    <h2 class="text-center">Virtual Postcard Template</h2>
 
                     <p>Dark and stormy smoky maple tempeh glaze shallots Thai pumpkin spring cilantro one bowl earl grey latte red curry tofu noodles. Dessert Bolivian rainbow pepper chili mocha chocolate hazelnut shiitake Thai super chili candy cane winter Chinese five-spice powder a delicious meal bite sized.</p>
                     
-                    <button @click="nextStep(2)" class="btn">Create Postcard</button>
+                    <div class="text-center mt-5">
+                        <button @click="nextStep(2)" class="btn btn-primary btn-lg">Create Postcard</button>
+                    </div>
                 </div>
             </transition>
 
@@ -76,9 +78,9 @@
                         </div>
                     </form>
 
-                    <button @click="previewPostcard()" class="btn form-offset mb-4">Preview Your Postcard</button>
-
-                    <div class="form-offset">
+                    <div class="text-center mt-5">
+                        <button @click="previewPostcard()" class="btn btn-primary btn-lg mb-4">Preview Your Postcard</button>
+                        <br>
                         <a href="javascript:;" @click="changePostcard()" class="">Select Different Postcard</a>
                     </div>
                 </div>
@@ -100,9 +102,9 @@
                         </div>
                     </div>
 
-                    <button @click="mailPostcard()" class="btn mail">Mail It!</button>
-
-                    <div class="text-center">
+                    <div class="text-center mt-5">
+                        <button @click="mailPostcard()" class="btn btn-success btn-lg mb-4">Mail It!</button>
+                        <br>
                         <a href="javascript:;" @click="nextStep(3)" class="">Update Your Message</a>
                     </div>
                 </div>
@@ -116,12 +118,12 @@
 
                     <div class="container-animation">
                         <div class="animation">
-                            <div class='i-mail'>
-                            <div class='mail-anim'></div>
+                            <div class="i-mail">
+                            <div class="mail-anim"></div>
                             </div>
-                            <div class='line'></div>
-                            <div class='i-success'>
-                            <div class='success-anim'></div>
+                            <div class="line"></div>
+                            <div class="i-success">
+                            <div class="success-anim"></div>
                             </div>
                         </div>
                         <div class="animation-message">
