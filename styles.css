@@ -149,10 +149,10 @@ img.selected {
 
 .preview {
     position: relative;
-    width: 600px;
-    height: 416px;
+    width: 800px;
+    height: 530px;
     background-image: url(assets/postcard-1-back.png);
-    background-size: 600px;
+    background-size: 800px;
     background-repeat: no-repeat;
     margin: 0 auto;
 }
