@@ -24,7 +24,7 @@
             <!-- INTRO -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[1]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/logo.png" alt="Logo">
                     <h1 class="text-center">Virtual Postcard<br><span>Template</h1>
                     <h2 class="text-center">Virtual Postcard Template</h2>
 
@@ -39,14 +39,14 @@
             <!-- SELECT POSTCARD -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[2]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/logo.png" alt="Logo">
                     <h2 class="text-center">Select a Postcard</h2>
 
                     <div class="postcards">
-                        <img @click="selectPostcard(1)" src="assets/postcard-1-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(2)" src="assets/postcard-2-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(3)" src="assets/postcard-3-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(4)" src="assets/postcard-4-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(1)" src="./assets/postcard-1-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(2)" src="./assets/postcard-2-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(3)" src="./assets/postcard-3-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(4)" src="./assets/postcard-4-front.png" class="img-polaroid">
                     </div>
                     <br><br>
                 </div>
@@ -55,7 +55,7 @@
             <!-- MESSAGE FORM -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[3]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/logo.png" alt="Logo">
                     <h2 class="text-center">Write a Message</h2>
 
                     <img :src="userPostcardSrc" class="selected" alt="Postcard">
@@ -73,7 +73,7 @@
 
                         <div class="mb-3">
                             <label for="inputMessage" class="form-label">Message (required)</label>
-                            <textarea id="inputMessage" class="form-control" name="inputMessage" ref="inputMessage" @keyup="checkChars()" maxlength="300">{{ inputMessage }}</textarea>
+                            <textarea id="inputMessage" class="form-control" name="inputMessage" ref="inputMessage" @keyup="checkChars()" :maxlength="maxChars">{{ inputMessage }}</textarea>
                             <p class="field-info">Remaining characters: {{ remainingChars }}</p>
                         </div>
                     </form>
@@ -89,7 +89,7 @@
             <!-- PREVIEW -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[4]" class="app-container-wide mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/logo.png" alt="Logo">
                     <h2 class="text-center">Preview Your Postcard</h2>
 
                     <div class="preview" :style="userPostcardStyleObject">
@@ -113,7 +113,7 @@
             <!-- THANK YOU -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[5]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/logo.png" alt="Logo">
                     <h2 class="text-center">Thank You!</h2>
 
                     <div class="container-animation">
