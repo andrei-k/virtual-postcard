@@ -1,5 +1,9 @@
 import "../styles/styles.css";
 
+if (module.hot) {
+	module.hot.accept();
+}
+
 const app = Vue.createApp({
 	data() {
 		return {

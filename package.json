@@ -4,7 +4,7 @@
 	"description": "This is a ready-to-use template that allows the user to select a postcard from 4 options and fill out their name, email, and a message. The user can then preview it with the text ovelayed on the back of the card. The postcard can then be \"mailed\", which sends it off with an animation. This template can be expended with your own images and further implementation.",
 	"main": "index.js",
 	"scripts": {
-		"dev": "webpack",
+		"dev": "webpack serve",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -27,6 +27,7 @@
 		"css-loader": "^6.7.1",
 		"style-loader": "^3.3.1",
 		"webpack": "^5.70.0",
-		"webpack-cli": "^4.9.2"
+		"webpack-cli": "^4.9.2",
+		"webpack-dev-server": "^4.7.4"
 	}
 }
