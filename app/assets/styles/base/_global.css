@@ -1,7 +1,7 @@
 body {
 	background: #f0f0f0;
 }
-  
+
 @media (max-width: 576px) {
 	body {
 		background: #fff;
@@ -51,7 +51,7 @@ body {
 	padding: 40px;
 	background: #fff;
 }
-  
+
 .logo {
 	display: block;
 	width: 240px;
@@ -79,7 +79,7 @@ h1 span {
 		font: bold 32px/42px 'Open Sans', sans-serif !important;
 	}
 }
-  
+
 h2 {
 	margin: 10px 0 40px;
 	font: 36px/46px 'Open Sans', sans-serif !important;
@@ -133,42 +133,42 @@ img.selected {
 	display: block;
 	width: 300px;
 	margin: 0 auto 60px auto;
-  }
-  
-  .preview {
-	  position: relative;
-	  width: 800px;
-	  height: 530px;
-	  background-image: url(assets/postcard-1-back.png);
-	  background-size: 800px;
-	  background-repeat: no-repeat;
-	  margin: 0 auto;
-  }
-  
-  .message-container {
-	  width: 552px;
-	  height: 490px;
-	  padding: 30px 20px 30px 30px;
-  }
-  
-  .message-container .message {
-	  overflow: hidden;
-	  width: 100%;
-	  height: 430px;
-	  font: 600 24px/36px 'Architects Daughter', cursive;
-  }
-  
-  .from-container {
+}
+
+.preview {
+	position: relative;
+	width: 800px;
+	height: 530px;
+	background-image: url(assets/postcard-1-back.png);
+	background-size: 800px;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+
+.message-container {
+	width: 552px;
+	height: 490px;
+	padding: 30px 20px 30px 30px;
+}
+
+.message-container .message {
+	overflow: hidden;
+	width: 100%;
+	height: 430px;
+	font: 600 24px/36px 'Architects Daughter', cursive;
+}
+
+.from-container {
 	position: absolute;
 	top: 220px;
 	left: 580px;
 	width: 200px;
 	height: 240px;
-  }
-  
-  .from-container .from-label, .from-container .from-name  {
+}
+
+.from-container .from-label, .from-container .from-name  {
 	font: 600 22px/32px 'Architects Daughter', cursive;
-  }
-  .from-container .from-name  {
+}
+.from-container .from-name  {
 	margin-top: 5px;
-  }
+}

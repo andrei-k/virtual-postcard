@@ -1,22 +1,22 @@
 label, input[type=text], textarea {
 	font: 18px/18px 'Open Sans', sans-serif;
-  }
-  
-  textarea {
+}
+
+textarea {
 	height: 200px;
-  }
-  
-  .form-offset {
+}
+
+.form-offset {
 	margin-left: 180px;
-  }
-  
-  .form-offset p {
+}
+
+.form-offset p {
 	font: 18px/18px 'Open Sans', sans-serif;
 	line-height: 28px;
-  }
-  
-  p.field-info {
+}
+
+p.field-info {
 	font: 16px/22px 'Open Sans', sans-serif;
 	margin: 10px 0 5px 10px;
 	color: #727171;
-  }
+}
