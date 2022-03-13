@@ -19,3 +19,5 @@ Run webpack in development mode:
 ```
 npm run dev
 ```
+
+Access it on a local server: http://localhost:3000/
