@@ -18,124 +18,122 @@
 </head>
 
 <body>
-    <div class="container pt-5 pb-5">
+	<div class="container pt-5 pb-5">
 
-        <div id="app" v-cloak>
-            <!-- INTRO -->
-            <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[1]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
-                    <h1 class="text-center">Virtual Postcard<br><span>Template</h1>
-                    <h2 class="text-center">Virtual Postcard Template</h2>
+		<div id="app" v-cloak>
+			<!-- INTRO -->
+			<transition name="fade" mode="out-in" appear>
+				<div v-if="steps[1]" class="app-container mx-auto p-sm-4 p-md-5">
+					<img class="logo" src="./assets/images/logo.png" alt="Logo">
+					<h1 class="text-center">Virtual Postcard<br><span>Template</h1>
+					<h2 class="text-center">Virtual Postcard Template</h2>
+					<p>Dark and stormy smoky maple tempeh glaze shallots Thai pumpkin spring cilantro one bowl earl grey latte red curry tofu noodles. Dessert Bolivian rainbow pepper chili mocha chocolate hazelnut shiitake Thai super chili candy cane winter Chinese five-spice powder a delicious meal bite sized.</p>
+					<div class="text-center mt-5">
+						<button @click="nextStep(2)" class="btn btn-primary btn-lg">Create Postcard</button>
+					</div>
+				</div>
+			</transition>
 
-                    <p>Dark and stormy smoky maple tempeh glaze shallots Thai pumpkin spring cilantro one bowl earl grey latte red curry tofu noodles. Dessert Bolivian rainbow pepper chili mocha chocolate hazelnut shiitake Thai super chili candy cane winter Chinese five-spice powder a delicious meal bite sized.</p>
-                    
-                    <div class="text-center mt-5">
-                        <button @click="nextStep(2)" class="btn btn-primary btn-lg">Create Postcard</button>
-                    </div>
-                </div>
-            </transition>
+			<!-- SELECT POSTCARD -->
+			<transition name="fade" mode="out-in" appear>
+				<div v-if="steps[2]" class="app-container mx-auto p-sm-4 p-md-5">
+					<img class="logo" src="./assets/images/logo.png" alt="Logo">
+					<h2 class="text-center">Select a Postcard</h2>
 
-            <!-- SELECT POSTCARD -->
-            <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[2]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
-                    <h2 class="text-center">Select a Postcard</h2>
+					<div class="postcards">
+						<img @click="selectPostcard(1)" src="./assets/images/postcard-1-front.png" class="img-polaroid">
+						<img @click="selectPostcard(2)" src="./assets/images/postcard-2-front.png" class="img-polaroid">
+						<img @click="selectPostcard(3)" src="./assets/images/postcard-3-front.png" class="img-polaroid">
+						<img @click="selectPostcard(4)" src="./assets/images/postcard-4-front.png" class="img-polaroid">
+					</div>
+					<br><br>
+				</div>
+			</transition>
 
-                    <div class="postcards">
-                        <img @click="selectPostcard(1)" src="./assets/images/postcard-1-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(2)" src="./assets/images/postcard-2-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(3)" src="./assets/images/postcard-3-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(4)" src="./assets/images/postcard-4-front.png" class="img-polaroid">
-                    </div>
-                    <br><br>
-                </div>
-            </transition>
+			<!-- MESSAGE FORM -->
+			<transition name="fade" mode="out-in" appear>
+				<div v-if="steps[3]" class="app-container mx-auto p-sm-4 p-md-5">
+					<img class="logo" src="./assets/images/logo.png" alt="Logo">
+					<h2 class="text-center">Write a Message</h2>
 
-            <!-- MESSAGE FORM -->
-            <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[3]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
-                    <h2 class="text-center">Write a Message</h2>
+					<img :src="userPostcardSrc" class="selected" alt="Postcard">
 
-                    <img :src="userPostcardSrc" class="selected" alt="Postcard">
+					<form>
+						<div class="mb-3">
+							<label for="inputEmail" class="form-label">Email (optional)</label>
+							<input type="email" id="inputEmail" class="form-control" ref="inputEmail" :value="userEmail">
+						</div>
 
-                    <form>
-                        <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email (optional)</label>
-                            <input type="email" id="inputEmail" class="form-control" ref="inputEmail" :value="userEmail">
-                        </div>
+						<div class="mb-3">
+							<label for="inputName" class="form-label">Name (optional)</label>
+							<input type="text" id="inputName" class="form-control" ref="inputName" :value="userName">
+						</div>
 
-                        <div class="mb-3">
-                            <label for="inputName" class="form-label">Name (optional)</label>
-                            <input type="text" id="inputName" class="form-control" ref="inputName" :value="userName">
-                        </div>
+						<div class="mb-3">
+							<label for="inputMessage" class="form-label">Message (required)</label>
+							<textarea id="inputMessage" class="form-control" name="inputMessage" ref="inputMessage" @keyup="checkChars()" :maxlength="maxChars">{{ inputMessage }}</textarea>
+							<p class="field-info">Remaining characters: {{ remainingChars }}</p>
+						</div>
+					</form>
 
-                        <div class="mb-3">
-                            <label for="inputMessage" class="form-label">Message (required)</label>
-                            <textarea id="inputMessage" class="form-control" name="inputMessage" ref="inputMessage" @keyup="checkChars()" :maxlength="maxChars">{{ inputMessage }}</textarea>
-                            <p class="field-info">Remaining characters: {{ remainingChars }}</p>
-                        </div>
-                    </form>
+					<div class="text-center mt-5">
+						<button @click="previewPostcard()" class="btn btn-primary btn-lg mb-4">Preview Your Postcard</button>
+						<br>
+						<a href="javascript:;" @click="changePostcard()" class="">Select Different Postcard</a>
+					</div>
+				</div>
+			</transition>
 
-                    <div class="text-center mt-5">
-                        <button @click="previewPostcard()" class="btn btn-primary btn-lg mb-4">Preview Your Postcard</button>
-                        <br>
-                        <a href="javascript:;" @click="changePostcard()" class="">Select Different Postcard</a>
-                    </div>
-                </div>
-            </transition>
+			<!-- PREVIEW -->
+			<transition name="fade" mode="out-in" appear>
+				<div v-if="steps[4]" class="app-container-wide mx-auto p-sm-4 p-md-5">
+					<img class="logo" src="./assets/images/logo.png" alt="Logo">
+					<h2 class="text-center">Preview Your Postcard</h2>
 
-            <!-- PREVIEW -->
-            <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[4]" class="app-container-wide mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
-                    <h2 class="text-center">Preview Your Postcard</h2>
+					<div class="preview" :style="userPostcardStyleObject">
+						<div class="message-container">
+							<div class="message" v-html="finalMessage"></div>
+						</div>
+						<div class="from-container" v-if="userName">
+							<div class="from-label">From:</div>
+							<div class="from-name" v-html="userName"></div>
+						</div>
+					</div>
 
-                    <div class="preview" :style="userPostcardStyleObject">
-                        <div class="message-container">
-                            <div class="message" v-html="finalMessage"></div>
-                        </div>
-                        <div class="from-container" v-if="userName">
-                            <div class="from-label">From:</div>
-                            <div class="from-name" v-html="userName"></div>
-                        </div>
-                    </div>
+					<div class="text-center mt-5">
+						<button @click="mailPostcard()" class="btn btn-success btn-lg mb-4">Mail It!</button>
+						<br>
+						<a href="javascript:;" @click="nextStep(3)" class="">Update Your Message</a>
+					</div>
+				</div>
+			</transition>
 
-                    <div class="text-center mt-5">
-                        <button @click="mailPostcard()" class="btn btn-success btn-lg mb-4">Mail It!</button>
-                        <br>
-                        <a href="javascript:;" @click="nextStep(3)" class="">Update Your Message</a>
-                    </div>
-                </div>
-            </transition>
+			<!-- THANK YOU -->
+			<transition name="fade" mode="out-in" appear>
+				<div v-if="steps[5]" class="app-container mx-auto p-sm-4 p-md-5">
+					<img class="logo" src="./assets/images/logo.png" alt="Logo">
+					<h2 class="text-center">Thank You!</h2>
 
-            <!-- THANK YOU -->
-            <transition name="fade" mode="out-in" appear>
-                <div v-if="steps[5]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
-                    <h2 class="text-center">Thank You!</h2>
+					<div class="container-animation">
+						<div class="animation">
+							<div class="i-mail">
+							<div class="mail-anim"></div>
+							</div>
+							<div class="line"></div>
+							<div class="i-success">
+							<div class="success-anim"></div>
+							</div>
+						</div>
+						<div class="animation-message">
+							Your postcard has been mailed
+						</div>
+					</div>
+					<br><br>
+				</div>
+			</transition>
+		</div>
+	</div>
 
-                    <div class="container-animation">
-                        <div class="animation">
-                            <div class="i-mail">
-                            <div class="mail-anim"></div>
-                            </div>
-                            <div class="line"></div>
-                            <div class="i-success">
-                            <div class="success-anim"></div>
-                            </div>
-                        </div>
-                        <div class="animation-message">
-                            Your postcard has been mailed
-                        </div>
-                    </div>
-                    <br><br>
-                </div>
-            </transition>
-        </div>
-    </div>
-
-    <script src="./assets/scripts/app.js"></script>
+	<script src="./assets/scripts/app.js"></script>
 </body>
 </html>
