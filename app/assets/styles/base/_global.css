@@ -1,0 +1,174 @@
+body {
+	background: #f0f0f0;
+}
+  
+@media (max-width: 576px) {
+	body {
+		background: #fff;
+	}
+	.container {
+		padding: 0;
+	}
+}
+
+#app {
+	margin: 0 auto;
+	font: 18px/26px 'Open Sans', sans-serif;
+	}
+	@media (max-width: 576px) {
+	#app {
+		padding: 0;
+	}
+}
+
+[v-cloak] {
+	display: none;
+}
+
+.fade-enter-active, .fade-leave-active {
+	transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+	opacity: 0;
+}
+
+.app-container {
+	position: relative;
+	max-width: 768px;
+	background-color: #fff;
+}
+@media (max-width: 576px) {
+	.app-container {
+		padding: 15px;
+	}
+}
+
+.app-container-wide {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px;
+	background: #fff;
+}
+  
+.logo {
+	display: block;
+	width: 240px;
+	margin: 20px auto 60px auto;
+}
+@media (max-width: 576px) {
+	.logo {
+		width: 180px;
+		margin: 0 auto 40px auto;
+	}
+}
+
+h1 {
+	margin: 10px 0 40px 0;
+	font: bold 56px/66px 'Open Sans', sans-serif !important;
+	letter-spacing: 1px;
+	color: #333;
+}
+h1 span {
+	color: #d6001c;
+}
+@media (max-width: 576px) {
+	h1 {
+		margin: 10px 0 20px 0;
+		font: bold 32px/42px 'Open Sans', sans-serif !important;
+	}
+}
+  
+h2 {
+	margin: 10px 0 40px;
+	font: 36px/46px 'Open Sans', sans-serif !important;
+	letter-spacing: 1px;
+	color: #333;
+}
+@media (max-width: 576px) {
+	h2 {
+		margin: 0 0 20px 0;
+		font: 26px/36px 'Open Sans', sans-serif !important;
+	}
+}
+
+p {
+	margin: 16px 0 30px 0;
+	font: 20px/32px 'Open Sans', sans-serif;
+	color: #333;
+}
+
+.btn {
+	font: 20px/32px 'Open Sans', sans-serif;
+	border-radius: 0;
+}
+
+.postcards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.postcards img {
+	width: 300px;
+	margin-bottom: 3%;
+	padding: 20px 40px;
+	border: 1px solid #fff;
+	cursor: pointer;
+}
+
+.postcards img:hover {
+	border: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+	.postcards img {
+		width: 92%;
+		margin: 0 auto 4% auto;
+	}
+}
+
+img.selected {
+	display: block;
+	width: 300px;
+	margin: 0 auto 60px auto;
+  }
+  
+  .preview {
+	  position: relative;
+	  width: 800px;
+	  height: 530px;
+	  background-image: url(assets/postcard-1-back.png);
+	  background-size: 800px;
+	  background-repeat: no-repeat;
+	  margin: 0 auto;
+  }
+  
+  .message-container {
+	  width: 552px;
+	  height: 490px;
+	  padding: 30px 20px 30px 30px;
+  }
+  
+  .message-container .message {
+	  overflow: hidden;
+	  width: 100%;
+	  height: 430px;
+	  font: 600 24px/36px 'Architects Daughter', cursive;
+  }
+  
+  .from-container {
+	position: absolute;
+	top: 220px;
+	left: 580px;
+	width: 200px;
+	height: 240px;
+  }
+  
+  .from-container .from-label, .from-container .from-name  {
+	font: 600 22px/32px 'Architects Daughter', cursive;
+  }
+  .from-container .from-name  {
+	margin-top: 5px;
+  }
