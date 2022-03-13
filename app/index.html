@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual postcard</title>
+    <title>Virtual Postcard</title>
 
     <script src="https://unpkg.com/vue@3"></script>
     <!-- https://unpkg.com/vue@3/dist/vue.global.prod.js -->
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <!-- INTRO -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[1]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
                     <h1 class="text-center">Virtual Postcard<br><span>Template</h1>
                     <h2 class="text-center">Virtual Postcard Template</h2>
 
@@ -39,14 +39,14 @@
             <!-- SELECT POSTCARD -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[2]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
                     <h2 class="text-center">Select a Postcard</h2>
 
                     <div class="postcards">
-                        <img @click="selectPostcard(1)" src="./assets/postcard-1-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(2)" src="./assets/postcard-2-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(3)" src="./assets/postcard-3-front.png" class="img-polaroid">
-                        <img @click="selectPostcard(4)" src="./assets/postcard-4-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(1)" src="./assets/images/postcard-1-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(2)" src="./assets/images/postcard-2-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(3)" src="./assets/images/postcard-3-front.png" class="img-polaroid">
+                        <img @click="selectPostcard(4)" src="./assets/images/postcard-4-front.png" class="img-polaroid">
                     </div>
                     <br><br>
                 </div>
@@ -55,7 +55,7 @@
             <!-- MESSAGE FORM -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[3]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
                     <h2 class="text-center">Write a Message</h2>
 
                     <img :src="userPostcardSrc" class="selected" alt="Postcard">
@@ -89,7 +89,7 @@
             <!-- PREVIEW -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[4]" class="app-container-wide mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
                     <h2 class="text-center">Preview Your Postcard</h2>
 
                     <div class="preview" :style="userPostcardStyleObject">
@@ -113,7 +113,7 @@
             <!-- THANK YOU -->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="steps[5]" class="app-container mx-auto p-sm-4 p-md-5">
-                    <img class="logo" src="./assets/logo.png" alt="Logo">
+                    <img class="logo" src="./assets/images/logo.png" alt="Logo">
                     <h2 class="text-center">Thank You!</h2>
 
                     <div class="container-animation">
@@ -136,6 +136,6 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="./assets/scripts/app.js"></script>
 </body>
 </html>

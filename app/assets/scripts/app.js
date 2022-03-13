@@ -8,15 +8,15 @@ const app = Vue.createApp({
                 4: false,
                 5: false
             },
-            userMessage: '',
-            defaultMessage: '',
+            userMessage: "",
+            defaultMessage: "",
             maxChars: 500,
             remainingChars: 500,
-            userName: '',
-            userEmail: '',
-            userPostcardSrc: 'assets/postcard-1-back.png',
+            userName: "",
+            userEmail: "",
+            userPostcardSrc: "./assets/images/postcard-1-back.png",
             userPostcardStyleObject: {
-                backgroundImage: 'url(assets/postcard-1-back.png)'
+                backgroundImage: "url(./assets/images/postcard-1-back.png)"
             }
         }
     },
@@ -35,8 +35,8 @@ const app = Vue.createApp({
             }, 320);
         },
         selectPostcard(postcard) {
-            this.userPostcardSrc = 'assets/postcard-' + postcard + '-back.png';
-            this.userPostcardStyleObject.backgroundImage = 'url(' + this.userPostcardSrc + ')';
+            this.userPostcardSrc = "./assets/images/postcard-" + postcard + "-back.png";
+            this.userPostcardStyleObject.backgroundImage = "url(" + this.userPostcardSrc + ")";
             this.nextStep(3);
         },
         previewPostcard() {
@@ -63,10 +63,10 @@ const app = Vue.createApp({
     },
     computed: {
         inputMessage() {
-            return (this.userMessage != '') ? this.userMessage : this.defaultMessage;
+            return (this.userMessage != "") ? this.userMessage : this.defaultMessage;
         },
         finalMessage() {
-            return this.userMessage.replace(/(?:\r\n|\r|\n)/g, '<br>');
+            return this.userMessage.replace(/(?:\r\n|\r|\n)/g, "<br>");
         }
     }
 });
