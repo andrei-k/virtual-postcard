@@ -1,8 +1,4 @@
-import "../styles/styles.css";
-
-if (module.hot) {
-	module.hot.accept();
-}
+window.Vue = require("vue");
 
 const app = Vue.createApp({
 	data() {
